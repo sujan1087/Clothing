@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    @foreach ($category as $value)
-    {{$value->id}}{{$value->name}}<br>
-    @endforeach
-</body>
-</html>
+@extends('layouts.nav')
+
+@section('content')
+
+    <table style="border: 1px solid;">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($category as $value)
+                <tr>
+                    <td> {{$value->id}} </td>
+                    <td> {{$value->name}} </td>
+                </tr>
+            @endforeach
+        </tbody>
+
+    </table>
+
+@endsection
